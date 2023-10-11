@@ -6,22 +6,10 @@ import Card from "./components/Card";
 import data from "./Data";
 
 export default function App() {
-  let info = data;
   let cards = data.map((element) => {
-    return (
-      <Card
-        key={element.id}
-        img={element.coverImg}
-        rating={element.stats.rating}
-        reviewCount={element.stats.reviewCount}
-        location={element.location}
-        title={element.title}
-        price={element.price}
-        openSpots={element.openSpots}
-      />
-    );
+    return <Card key={element.id} item={element} />;
   });
-  console.log(info);
+  console.log(cards);
 
   return (
     <div>
